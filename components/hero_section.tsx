@@ -1,22 +1,12 @@
-import { ArrowUpRight, CirclePlay } from "lucide-react";
-import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import profile from "@/public/profile.jpeg"
 
 export default function Hero_section() {
   return (
     <div className="flex min-h-screen items-center justify-center">
       <div className="mx-auto grid w-full max-w-(--breakpoint-xl) gap-12 px-6 py-12 lg:grid-cols-2">
         <div>
-          <Badge
-            asChild
-            className="rounded-full border-border py-1"
-            variant="secondary"
-          >
-            <Link href="#">
-              Just released v1.0.0 <ArrowUpRight className="ml-1 size-4" />
-            </Link>
-          </Badge>
           <h1 className="mt-6 max-w-[17ch] font-semibold text-4xl leading-[1.2]! tracking-[-0.035em] md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem]">
             Hey, I’m Aswin
           </h1>
@@ -37,7 +27,22 @@ export default function Hero_section() {
             </Button>
           </div>
         </div>
-        <div className="aspect-video w-full rounded-xl bg-accent" />
+        
+        
+        <div className="flex w-full items-center justify-center">
+          <div className="flex h-80 w-80 items-center justify-center rounded-full border border-border bg-accent">
+            <Image
+              src={profile}
+              alt="profile"
+              width={300}
+              height={300}
+              className="h-100 w-100 rounded-full object-cover"
+              priority
+            />
+          </div>
+        </div>
+
+        
       </div>
     </div>
   );

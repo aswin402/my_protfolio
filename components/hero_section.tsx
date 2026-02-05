@@ -30,13 +30,13 @@ export default function Hero_section() {
         
         
         <div className="flex w-full items-center justify-center">
-          <div className="flex h-80 w-80 items-center justify-center rounded-full border border-border bg-accent">
+          <div className="flex h-90 w90 items-center justify-center rounded-xl border border-border bg-accent">
             <Image
               src={profile}
               alt="profile"
               width={300}
               height={300}
-              className="h-100 w-100 rounded-full object-cover"
+              className="h-90 w-90 rounded-xl object-cover"
               priority
             />
           </div>

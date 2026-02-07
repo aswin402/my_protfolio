@@ -130,3 +130,56 @@
     @apply bg-background text-foreground;
   }
 }
+
+.neon-card {
+  position: relative;
+  width: 260px;
+  height: 360px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* animated gradient border */
+.neon-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* border thickness */
+  border-radius: 18px;
+  background: linear-gradient(
+    120deg,
+    #ee7752,
+    #e73c7e,
+    #23a6d5,
+    #23d5ab
+  );
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+
+  /* mask trick to make it a border only */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.neon-card-inner {
+  position: absolute;
+  inset: 2px;
+  background: #0b0b0b;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

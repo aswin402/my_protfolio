@@ -28,19 +28,67 @@ export default function Hero_section() {
           </div>
         </div>
         
-        
         <div className="flex w-full items-center justify-center">
-          <div className="flex h-90 w90 items-center justify-center rounded-xl border border-border bg-accent">
-            <Image
-              src={profile}
-              alt="profile"
-              width={300}
-              height={300}
-              className="h-90 w-90 rounded-xl object-cover"
-              priority
-            />
-          </div>
+          <article className="neon-card group">
+            <div className="neon-card-inner">
+        
+              {/* IMAGE */}
+              <Image
+                src={profile}
+                alt="profile"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                priority
+              />
+        
+              {/* DARK OVERLAY */}
+              <div className="absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        
+              {/* HOVER INFO */}
+              <div className="absolute inset-0 flex flex-col justify-end p-5
+                              opacity-0 translate-y-4
+                              transition-all duration-300
+                              group-hover:opacity-100 group-hover:translate-y-0">
+        
+                <h3 className="text-lg font-semibold text-white">
+                  Aswin Vishal
+                </h3>
+        
+                <p className="text-sm text-white/80 mt-1">
+                  Software Developer · ECE Student
+                </p>
+        
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white">
+                    React
+                  </span>
+                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white">
+                    Next.js
+                  </span>
+                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white">
+                    Flutter
+                  </span>
+                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white">
+                    MERN
+                  </span>
+                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white">
+                    PERN
+                  </span>
+                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white">
+                    RESTAPI
+                  </span>
+                </div>
+        
+              </div>
+        
+            </div>
+          </article>
         </div>
+
+
+
+
+
 
         
       </div>
